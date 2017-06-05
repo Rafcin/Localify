@@ -8,16 +8,20 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.github.florent37.materialviewpager.MaterialViewPager;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
 
     TextView mContentView;
     EventViewAdapter mEventAdapter;
+    MaterialViewPager mViewPager;
 
 
     //Add to adapter
     ArrayList<String> currentPostsARL;
+
 
     //ListView
     ListView listView;
@@ -26,15 +30,14 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_main);
-        
+
         mContentView = (TextView) findViewById(R.id.content_post);
-
-
 
         currentPostsARL = new ArrayList<String>();
 
         listView = (ListView) findViewById(R.id.listview);
-        
+
+
         String[] currentPosts = LocalEvents.getFakeLocalEvents(30);
 
         for (String post : currentPosts) {
