@@ -29,5 +29,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
     compile 'com.afollestad.material-dialogs:commons:0.9.4.5'
     compile 'com.github.Cutta:GifView:1.1'
+    compile 'com.eftimoff:android-viewpager-transformers:1.0.1@aar'
     testCompile 'junit:junit:4.12'
 }
