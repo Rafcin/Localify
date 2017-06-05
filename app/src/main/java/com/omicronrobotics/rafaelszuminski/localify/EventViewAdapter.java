@@ -62,7 +62,7 @@ public class EventViewAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         View layout = layoutInflater.inflate(R.layout.list_item,null);
 
-        TextView eventName = (TextView) layout.findViewById(R.id.fileItem);
+        TextView eventName = (TextView) layout.findViewById(R.id.event_name);
         ImageView imageFile = (ImageView)layout.findViewById(R.id.listImage);
 
         eventName.setGravity(View.TEXT_ALIGNMENT_CENTER);

@@ -12,32 +12,30 @@
 -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
-    android:layout_height="wrap_content">
-
-    <ImageView
-        android:id="@+id/listImage"
-        android:layout_width="66dp"
-        android:layout_height="match_parent"/>
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp">
-
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/fileItem"
+            android:id="@+id/event_name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="65dp"
+            android:layout_alignParentTop="true"
             android:gravity="center_vertical"
             android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
-            android:text="Events"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textSize="18sp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true" />
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/listImage"
+            android:layout_below="@+id/event_name"
+            android:layout_width="match_parent"
+            android:layout_height="256dp"/>
 
     </RelativeLayout>
 

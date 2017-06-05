@@ -31,9 +31,7 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_main);
 
-        mContentView = (TextView) findViewById(R.id.content_post);
-
-        currentPostsARL = new ArrayList<String>();
+        currentPostsARL = new ArrayList<>();
 
         listView = (ListView) findViewById(R.id.listview);
 
