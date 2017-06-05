@@ -3,9 +3,7 @@ package com.omicronrobotics.rafaelszuminski.localify;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.github.florent37.materialviewpager.MaterialViewPager;
@@ -14,17 +12,14 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
 
-    TextView mContentView;
-    EventViewAdapter mEventAdapter;
-    MaterialViewPager mViewPager;
-
+    RecyclerView.Adapter mEventAdapter;
 
     //Add to adapter
     ArrayList<String> currentPostsARL;
 
 
     //ListView
-    ListView listView;
+    RecyclerView feed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +28,7 @@ public class MainActivity extends AppCompatActivity{
 
         currentPostsARL = new ArrayList<>();
 
-        listView = (ListView) findViewById(R.id.listview);
+        feed = (RecyclerView) findViewById(R.id.view_feed);
 
 
         String[] currentPosts = LocalEvents.getFakeLocalEvents(30);
@@ -45,19 +40,13 @@ public class MainActivity extends AppCompatActivity{
         mEventAdapter = new EventViewAdapter(currentPostsARL, this);
 
 
-        listView.setBackgroundColor(Color.WHITE);
-        listView.setDividerHeight(0);
+        feed.setBackgroundColor(Color.WHITE);
 
         //choose file location
         //sdcardChooser();
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-            }
-        });
-        listView.setAdapter(mEventAdapter);
+        
+        feed.setAdapter(mEventAdapter);
 
 
     }
