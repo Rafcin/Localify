@@ -1,12 +1,9 @@
 package com.omicronrobotics.rafaelszuminski.localify;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
-
-import com.github.florent37.materialviewpager.MaterialViewPager;
 
 import java.util.ArrayList;
 
@@ -40,13 +37,15 @@ public class MainActivity extends AppCompatActivity{
         mEventAdapter = new EventViewAdapter(currentPostsARL, this);
 
 
-        feed.setBackgroundColor(Color.WHITE);
+        //feed.setBackgroundColor(Color.RED);
 
         //choose file location
         //sdcardChooser();
 
-        
+        feed.setLayoutManager(new LinearLayoutManager(this));
+
         feed.setAdapter(mEventAdapter);
+
 
 
     }
