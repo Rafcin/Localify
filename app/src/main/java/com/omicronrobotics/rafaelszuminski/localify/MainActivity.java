@@ -11,8 +11,9 @@ import com.github.florent37.materialviewpager.MaterialViewPager;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
-
-    RecyclerView.Adapter mEventAdapter;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mEventAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
     //Add to adapter
     ArrayList<String> currentPostsARL;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity{
             currentPostsARL.add(post);
         }
 
-        mEventAdapter = new EventViewAdapter(currentPostsARL, this);
+        mEventAdapter = new RecyclerAdapter(currentPosts);
 
 
         feed.setBackgroundColor(Color.WHITE);
