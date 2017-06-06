@@ -1,12 +1,15 @@
 package com.omicronrobotics.rafaelszuminski.localify;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -19,6 +22,8 @@ public class EventViewAdapter extends RecyclerView.Adapter{
     Context adapContext;
     LayoutInflater layoutInflater;
 
+    private String mURL = "https://lh3.googleusercontent.com/proxy/A6pVXalBNZtPf_Og75YROwW1cOJwaPKebBzAerfWw9y2mqBSoezvfjtac5tUg9IJS_46AXuRJQNswlAx-mj3EmMRZOqzCkNvUNIOcMoSQMchCPhPc_-teg=s1060-p-rw";
+
 
 
 
@@ -28,13 +33,11 @@ public class EventViewAdapter extends RecyclerView.Adapter{
         public MyViewHolder(View v) {
             super(v);
 
-            eventName = (TextView) v.findViewById(R.id.event_name);
-            imageFile = (ImageView)v.findViewById(R.id.listImage);
+            eventName = (TextView) v.findViewById(R.id.eventName);
+            imageFile = (ImageView)v.findViewById(R.id.img_thumbnail);
 
 
-            //eventName.setGravity(View.TEXT_ALIGNMENT_CENTER);
-            //eventName.setTextColor(Color.rgb(33,33,33));   //BlueColor -- Color.rgb(46,68,159)
-            //eventName.setHeight(220);
+            eventName.setTextColor(Color.rgb(33,33,33));   //BlueColor -- Color.rgb(46,68,159)
         }
     }
     
@@ -58,7 +61,9 @@ public class EventViewAdapter extends RecyclerView.Adapter{
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyViewHolder vHolder = (MyViewHolder) holder;
         vHolder.eventName.setText(events.get(position));
-        vHolder.imageFile.setImageResource(R.drawable.ic_placeholder);
+        //vHolder.imageFile.setImageResource();
+        Picasso.with(adapContext).load(mURL).into(vHolder.imageFile);
+
     }
 
     @Override
@@ -83,40 +88,4 @@ public class EventViewAdapter extends RecyclerView.Adapter{
 
     }
 
-
-    /*
-     * BaseAdapter Overrides, we are now using a RecyclerView.Adapter instead
-     */
-//    @Override
-//    public int getCount() {
-//        if(events == null) {
-//            return 0;
-//        }
-//        return events.size();
-//    }
-//
-//    @Override
-//    public Object getItem(int i) {
-//        if(events == null) {
-//            return null;
-//        }
-//        return events.get(i);
-//    }
-//    @Override
-//    public View getView(int i, View view, ViewGroup viewGroup) {
-//        View layout = layoutInflater.inflate(R.layout.list_item,null);
-//
-//        TextView eventName = (TextView) layout.findViewById(R.id.event_name);
-//        ImageView imageFile = (ImageView)layout.findViewById(R.id.listImage);
-//
-//        eventName.setGravity(View.TEXT_ALIGNMENT_CENTER);
-//        eventName.setText(events.get(i));
-//        eventName.setTextColor(Color.rgb(33,33,33));   //BlueColor -- Color.rgb(46,68,159)
-//        eventName.setHeight(220);
-//
-//        imageFile.setImageResource(R.drawable.ic_placeholder);
-//
-//
-//        return layout;
-//    }
 }
