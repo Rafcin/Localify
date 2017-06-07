@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -104,9 +106,12 @@ public class EventViewAdapter extends RecyclerView.Adapter{
         vHolder.mTopToolBar.setTitle(events.get(position));
         vHolder.mEventInfo.setText("brassmashbandWe have posters! Where should we put them up? #slo #slobrew #downtownslo #livemusic #pintnight #shareslo #calpoly #sanluisobispo #slocounty");
 
-        if(vHolder.mEventInfo.getText().toString().contains("#")){
-            //Set # color for like #events...
-        }
+        Pattern tagMatcher = Pattern.compile("[#]+[A-Za-z0-9-_]+\\b");
+
+        String url = "https://www.google.co.in/";
+        //Attach Linkify to TextView
+        vHolder.mEventInfo.setLinkTextColor(Color.argb(255,68,136,226));
+        Linkify.addLinks(vHolder.mEventInfo, tagMatcher, url);
 
         Picasso
                 .with(adapContext)
