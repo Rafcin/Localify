@@ -21,11 +21,11 @@ import java.util.ArrayList;
 
 public class EventViewAdapter extends RecyclerView.Adapter{
     ArrayList<String> events; //Array
-    Context adapContext;
+    public static Context adapContext;
     LayoutInflater layoutInflater;
 
-    private String mPostImageadr = "https://thenextweb.com/wp-content/blogs.dir/1/files/2013/09/85807485.jpg";
-    private String mUserIconadr = "https://lh6.googleusercontent.com/-0sRw6H119gw/AAAAAAAAAAI/AAAAAAAAAAA/wBS2KABxWnY/s128-c-k/photo.jpg";
+    private static String mPostImageadr = "https://thenextweb.com/wp-content/blogs.dir/1/files/2013/09/85807485.jpg";
+    private static String mUserIconadr = "https://lh6.googleusercontent.com/-0sRw6H119gw/AAAAAAAAAAI/AAAAAAAAAAA/wBS2KABxWnY/s128-c-k/photo.jpg";
 
 
 
@@ -50,6 +50,18 @@ public class EventViewAdapter extends RecyclerView.Adapter{
             shareButton = (ImageButton) v.findViewById(R.id.shareColorButton);
             mTopToolBar = (Toolbar)v.findViewById(R.id.detailToolbar);
 
+            imageFile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
+
+
+
+
+            //Static, will never change
             mTopToolBar.setTitleTextColor(Color.WHITE);
             mTopToolBar.setBackgroundColor(Color.WHITE);
             mTopToolBar.setTitle("");
@@ -87,7 +99,6 @@ public class EventViewAdapter extends RecyclerView.Adapter{
         vHolder.eventName.setText(events.get(position));
         vHolder.mTopToolBar.setTitle(events.get(position));
 
-
         vHolder.userIcon.setAdjustViewBounds(true);
         Picasso
                 .with(adapContext)
@@ -100,7 +111,7 @@ public class EventViewAdapter extends RecyclerView.Adapter{
         Picasso
                 .with(adapContext)
                 .load(mPostImageadr)
-                .resize(3500,3500) // resizes the image to these dimensions (in pixel)
+                .resize(700,700) // resizes the image to these dimensions (in pixel)
                 .centerCrop()
                 .into(vHolder.imageFile);
 
