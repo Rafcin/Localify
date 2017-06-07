@@ -15,6 +15,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by rafaelszuminski on 6/4/17.
  */
@@ -24,7 +26,7 @@ public class EventViewAdapter extends RecyclerView.Adapter{
     public static Context adapContext;
     LayoutInflater layoutInflater;
 
-    private static String mPostImageadr = "https://thenextweb.com/wp-content/blogs.dir/1/files/2013/09/85807485.jpg";
+    private static String mPostImageadr = "https://scontent.cdninstagram.com/t51.2885-15/e35/18949510_151178825425531_218754023098941440_n.jpg";
     private static String mUserIconadr = "https://lh6.googleusercontent.com/-0sRw6H119gw/AAAAAAAAAAI/AAAAAAAAAAA/wBS2KABxWnY/s128-c-k/photo.jpg";
 
 
@@ -33,10 +35,11 @@ public class EventViewAdapter extends RecyclerView.Adapter{
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView eventName;
         ImageView imageFile;
-        ImageView userIcon;
+        CircleImageView mCircleUserIcon;
         ImageButton shareButton;
         Toolbar mTopToolBar;
         Toolbar mBottomToolBar;
+        TextView mEventInfo;
 
 
 
@@ -46,9 +49,10 @@ public class EventViewAdapter extends RecyclerView.Adapter{
 
             eventName = (TextView) v.findViewById(R.id.eventName);
             imageFile = (ImageView)v.findViewById(R.id.img_thumbnail);
-            userIcon = (ImageView)v.findViewById(R.id.userIcon);
+            mCircleUserIcon = (CircleImageView)v.findViewById(R.id.profile_image);
             shareButton = (ImageButton) v.findViewById(R.id.shareColorButton);
             mTopToolBar = (Toolbar)v.findViewById(R.id.detailToolbar);
+            mEventInfo = (TextView)v.findViewById(R.id.eventInfo);
 
             imageFile.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -98,14 +102,19 @@ public class EventViewAdapter extends RecyclerView.Adapter{
         vHolder.shareButton.setColorFilter(Color.argb(255, 255, 255, 255)); // White Tint
         vHolder.eventName.setText(events.get(position));
         vHolder.mTopToolBar.setTitle(events.get(position));
+        vHolder.mEventInfo.setText("brassmashbandWe have posters! Where should we put them up? #slo #slobrew #downtownslo #livemusic #pintnight #shareslo #calpoly #sanluisobispo #slocounty");
 
-        vHolder.userIcon.setAdjustViewBounds(true);
+        if(vHolder.mEventInfo.getText().toString().contains("#")){
+            //Set # color for like #events...
+        }
+
         Picasso
                 .with(adapContext)
                 .load(mUserIconadr)
                 .resize(41,41) // resizes the image to these dimensions (in pixel)
                 .centerCrop()
-                .into(vHolder.userIcon);
+                .noFade()
+                .into(vHolder.mCircleUserIcon);
         //Picasso.with(adapContext).load(mPostImageadr).into(vHolder.imageFile);
         vHolder.imageFile.setAdjustViewBounds(true);
         Picasso

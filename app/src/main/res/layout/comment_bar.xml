@@ -31,15 +31,5 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
-    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/imgProfilePicture"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/non_technical_mountains_whitney"
-        android:onClick="onClickProfilePicture"
-        app:border_color="@color/white"
-        app:border_width="3dp" />
 
 </RelativeLayout>

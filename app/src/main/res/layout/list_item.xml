@@ -58,6 +58,7 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:text="Event Name"
+                android:textColor="@color/green"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="0sp"
@@ -115,21 +116,46 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true">
 
-                <ImageView
-                    android:id="@+id/userIcon"
-                    android:layout_width="46dp"
-                    android:layout_height="46dp"
-                    android:layout_marginStart="10dp"
-                    card_view:srcCompat="@drawable/ic_placeholder"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentStart="true" />
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
                     android:layout_toEndOf="@+id/userIcon">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="41dp"
+                        android:layout_height="41dp"
+                        android:src="@drawable/non_technical_mountains_whitney"
+                        card_view:civ_border_color="#000000"
+                        card_view:civ_border_width="1.3dp"
+                        android:layout_marginStart="11dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:id="@+id/eventHostName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/textView11"
+                        android:layout_alignStart="@+id/textView11"
+                        android:layout_alignTop="@+id/profile_image"
+                        android:text="Event Name"
+                        android:textColor="@color/green"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignStart="@+id/profile_image"
+                        android:layout_marginStart="49dp"
+                        android:text="Posted:"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
