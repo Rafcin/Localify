@@ -129,7 +129,7 @@
                         android:layout_height="41dp"
                         android:src="@drawable/non_technical_mountains_whitney"
                         card_view:civ_border_color="#000000"
-                        card_view:civ_border_width="1.3dp"
+                        card_view:civ_border_width="0dp"
                         android:layout_marginStart="11dp"
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentStart="true" />

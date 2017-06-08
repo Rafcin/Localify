@@ -3,12 +3,10 @@ package com.omicronrobotics.rafaelszuminski.localify;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v13.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,7 +19,6 @@ public class MainActivity extends AppCompatActivity{
     ArrayList<String> currentPostsARL;
     //ListView
     RecyclerView feed;
-    FloatingActionButton mFloatingButton;
 
 
 
@@ -34,7 +31,6 @@ public class MainActivity extends AppCompatActivity{
 
         feed = (RecyclerView) findViewById(R.id.view_feed);
 
-        mFloatingButton = (FloatingActionButton)findViewById(R.id.floatingActionButton);
 
         String[] currentPosts = LocalEvents.getFakeLocalEvents(30);
 
@@ -51,15 +47,6 @@ public class MainActivity extends AppCompatActivity{
         ActivityCompat.requestPermissions(MainActivity.this,
                 new String[]{Manifest.permission.INTERNET},
                 1);
-
-        mFloatingButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-
 
     }
 
