@@ -24,26 +24,26 @@
                 android:id="@+id/detailToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="bottom"
                 android:background="?attr/colorPrimary"
                 android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                android:layout_gravity="bottom"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true" />
+                android:theme="?attr/actionBarTheme"/>
 
             <View
+                android:id="@+id/view3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_below="@id/detailToolbar"
-                android:background="@android:color/darker_gray"
-                android:id="@+id/view3" />
+                android:background="@android:color/darker_gray"/>
 
             <ImageView
                 android:id="@+id/img_thumbnail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/space3" />
+                android:layout_below="@+id/space3"/>
 
             <TextView
                 android:id="@+id/eventName"
@@ -57,12 +57,12 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
-                android:text="Event Name"
-                android:textColor="@color/green"
+                android:text="@string/default_event_title"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/green"
                 android:textSize="0sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/eventInfo"
@@ -75,21 +75,21 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="5dp"
-                android:text="Lorem ipsum dolor sit amet, adipiscing eleifend aliquam, vitae ultrices, velit arcu sodales dui, habitasse cursus netus felis, ullamcorper purus volutpat commodo duis sed. Eros lacus volutpat urna cursus."
+                android:text="@string/default_event_summary"
                 android:textColor="#ff272727"
-                android:textSize="15dp" />
+                />
 
             <ImageButton
                 android:id="@+id/shareColorButton"
                 android:layout_width="41dp"
                 android:layout_height="41dp"
-                android:background="@drawable/ic_share"
-                android:drawableTint="@color/white"
-                android:tint="@color/white"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
+                android:layout_marginBottom="13dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="13dp" />
+                android:background="@drawable/ic_share"
+                android:drawableTint="@color/white"
+                android:tint="@color/white"/>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/bottomBar"
@@ -100,14 +100,14 @@
                 android:layout_gravity="bottom"
                 android:background="?attr/colorPrimary"
                 android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme" />
+                android:theme="?attr/actionBarTheme"/>
 
             <Space
                 android:id="@+id/space3"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/eventInfo" />
+                android:layout_below="@+id/eventInfo"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -116,56 +116,54 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_toEndOf="@+id/userIcon">
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profile_image"
-                        android:layout_width="41dp"
-                        android:layout_height="41dp"
+                        android:layout_width="@dimen/title_height"
+                        android:layout_height="@dimen/title_height"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="11dp"
                         android:src="@drawable/non_technical_mountains_whitney"
                         card_view:civ_border_color="#000000"
-                        card_view:civ_border_width="0dp"
-                        android:layout_marginStart="11dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentStart="true" />
+                        card_view:civ_border_width="0dp"/>
 
                     <TextView
                         android:id="@+id/eventHostName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_above="@+id/textView11"
-                        android:layout_alignStart="@+id/textView11"
-                        android:layout_alignTop="@+id/profile_image"
-                        android:text="Event Name"
-                        android:textColor="@color/green"
-                        android:textAlignment="center"
-                        android:textStyle="bold" />
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/fab_margin"
+                        android:text="@string/default_event_title"
+                        android:textSize="24sp"
+                        android:textStyle="bold"/>
+                    <!--android:layout_above="@+id/textView11"-->
 
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignStart="@+id/profile_image"
-                        android:layout_marginStart="49dp"
-                        android:text="Posted:"
-                        android:textAlignment="center"
-                        android:textStyle="bold" />
+                    <!--<TextView-->
+                    <!--android:id="@+id/textView11"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_alignStart="@+id/profile_image"-->
+                    <!--android:layout_marginStart="49dp"-->
+                    <!--android:text="Posted:"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textStyle="bold" />-->
 
-                </RelativeLayout>
+                </LinearLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignTop="@+id/shareColorButton"
-                android:layout_alignParentStart="true">
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/shareColorButton">
 
                 <Button
                     android:id="@+id/shareDetailButton"
@@ -174,7 +172,7 @@
                     android:layout_alignBottom="@+id/likeDetailButton"
                     android:layout_marginStart="16dp"
                     android:layout_toEndOf="@+id/likeDetailButton"
-                    android:background="@drawable/ic_share" />
+                    android:background="@drawable/ic_share"/>
 
                 <Button
                     android:id="@+id/likeDetailButton"
@@ -183,7 +181,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="11dp"
-                    android:background="@drawable/ic_like" />
+                    android:background="@drawable/ic_like"/>
             </RelativeLayout>
 
         </RelativeLayout>

@@ -27,7 +27,12 @@ public class LocalEvents {
         return fakeEvents;
     }
 
-    public static void post(String eventName) {
+    public static String[] getImgURLs() {
+        
+        return null;
+    }
+    
+    public static void addEvent(String eventName, String imgURL) {
         eventList.add(eventName);
     }
 

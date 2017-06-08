@@ -133,7 +133,7 @@ public class EventViewAdapter extends RecyclerView.Adapter{
         Picasso
                 .with(adapContext)
                 .load(mPostImageadr)
-                .resize(700,700) // resizes the image to these dimensions (in pixel)
+                .resize(700, 700) // seems like these values should be in res/values/dimens.xml file
                 .centerCrop()
                 .into(vHolder.imageFile);
 

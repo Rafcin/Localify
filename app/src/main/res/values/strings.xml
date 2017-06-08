@@ -6,6 +6,6 @@
 
     <string name="action_settings">Settings</string>
 
-
-
+    <string name="default_event_summary">Lorem ipsum dolor sit amet, adipiscing eleifend aliquam, vitae ultrices, velit arcu sodales dui, habitasse cursus netus felis, ullamcorper purus volutpat commodo duis sed. Eros lacus volutpat urna cursus.</string>
+    <string name="default_event_title">Event Name</string>
 </resources>
