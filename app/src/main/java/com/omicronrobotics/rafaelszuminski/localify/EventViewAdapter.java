@@ -49,10 +49,10 @@ public class EventViewAdapter extends RecyclerView.Adapter{
         public MyViewHolder(View v) {
             super(v);
 
-            eventName = (TextView) v.findViewById(R.id.eventName);
-            imageFile = (ImageView)v.findViewById(R.id.img_thumbnail);
+//            eventName = (TextView) v.findViewById(R.id.eventName);
+//            imageFile = (ImageView)v.findViewById(R.id.img_thumbnail);
             mCircleUserIcon = (CircleImageView)v.findViewById(R.id.profile_image);
-            shareButton = (ImageButton) v.findViewById(R.id.shareColorButton);
+//            shareButton = (ImageButton) v.findViewById(R.id.shareColorButton);
             mTopToolBar = (Toolbar)v.findViewById(R.id.detailToolbar);
             mEventInfo = (TextView)v.findViewById(R.id.eventInfo);
 
