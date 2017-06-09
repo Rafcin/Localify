@@ -63,10 +63,6 @@ public class EventViewAdapter extends RecyclerView.Adapter{
                 }
             });
 
-
-
-
-
             //Static, will never change
             mTopToolBar.setTitleTextColor(Color.WHITE);
             mTopToolBar.setBackgroundColor(Color.WHITE);

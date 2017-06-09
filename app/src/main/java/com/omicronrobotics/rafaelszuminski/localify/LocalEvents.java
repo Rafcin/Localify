@@ -1,9 +1,9 @@
-package com.omicronrobotics.rafaelszuminski.localify; /**
+package com.omicronrobotics.rafaelszuminski.localify;
+/*
  * Created by dkfrayne on 6/4/17.
  */
 
 import android.location.Location;
-
 import java.util.ArrayList;
 
 
