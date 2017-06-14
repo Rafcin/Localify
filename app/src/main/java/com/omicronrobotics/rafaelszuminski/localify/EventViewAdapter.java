@@ -56,6 +56,7 @@ public class EventViewAdapter extends RecyclerView.Adapter{
             mTopToolBar = (Toolbar)v.findViewById(R.id.detailToolbar);
             mEventInfo = (TextView)v.findViewById(R.id.eventInfo);
 
+
             imageFile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

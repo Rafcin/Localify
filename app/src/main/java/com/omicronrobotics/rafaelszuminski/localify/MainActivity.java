@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity{
     RecyclerView feed;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +46,8 @@ public class MainActivity extends AppCompatActivity{
         ActivityCompat.requestPermissions(MainActivity.this,
                 new String[]{Manifest.permission.INTERNET},
                 1);
+
+
 
     }
 
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity{
             // permissions this app might request
         }
     }
+
 
 
 }
